@@ -10,8 +10,9 @@
 body{margin:0;font-family:"Rubik","Open Sans",Arial,sans-serif;color:var(--ink);
 background:linear-gradient(160deg,var(--pink) 0%,#fff 45%,var(--mint) 75%,var(--sky) 100%);min-height:100vh;
 display:flex;flex-direction:column;align-items:center}
-main{width:100%;max-width:640px;padding:28px 16px 90px}
-.card{background:#fff;border-radius:22px;padding:26px 22px;box-shadow:0 8px 30px rgba(194,24,91,.12);margin-top:18px}
+main{width:100%;max-width:640px;padding:16px 16px 56px}
+@media(min-width:760px){main{max-width:980px}.cols{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}.cols form{margin-top:-16px}}
+.card{background:#fff;border-radius:22px;padding:18px 22px;box-shadow:0 8px 30px rgba(194,24,91,.12);margin-top:18px}
 h1{color:var(--gold);text-align:center;font-size:1.7rem;margin:6px 0 4px}
 .sub{text-align:center;margin:0 0 6px;color:#555}
 .pledge{background:var(--pink);border-radius:16px;padding:16px 18px;line-height:1.85;font-size:1.05rem}
@@ -28,7 +29,7 @@ button:disabled{opacity:.45;cursor:not-allowed}
 .dl small{display:block;font-weight:400;color:#555;margin-top:2px}
 .err{color:#b00020;text-align:center;margin-top:10px;min-height:1.2em}
 .hidden{display:none}
-footer{position:fixed;bottom:0;inset-inline:0;background:#fff;border-top:1px solid #eee;text-align:center;padding:10px 8px;font-size:.9rem;color:#555}
+footer{position:fixed;bottom:0;inset-inline:0;background:#fff;border-top:1px solid #eee;text-align:center;padding:8px;font-size:.9rem;color:#555}
 </style>
 </head>
 <body>
@@ -37,6 +38,7 @@ footer{position:fixed;bottom:0;inset-inline:0;background:#fff;border-top:1px sol
 <section id="sign" class="card">
   <h1>חוברות להדפסה</h1>
   <p class="sub">לפני ההורדה, חתימה קצרה על התחייבות לשמירה על הקבצים</p>
+  <div class="cols">
   <div class="pledge">
     החוברות נוצרו בעבודה רבה, והן מיועדות לשימושך האישי בלבד.<br>
     בחתימתי אני מתחייבת שלא לשתף, להפיץ, לפרסם, להעביר או לשלוח את הקבצים, בכל צורה שהיא, לאף אדם.<br>
@@ -54,6 +56,7 @@ footer{position:fixed;bottom:0;inset-inline:0;background:#fff;border-top:1px sol
     <div class="err" id="err"></div>
     <button id="go" type="submit" disabled>אני חותמת ועוברת להורדה</button>
   </form>
+  </div>
 </section>
 
 <section id="files" class="card hidden">
