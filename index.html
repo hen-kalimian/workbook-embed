@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>חוברות להדפסה | חן קלימיאן</title>
+<style>
+:root{--pink:#ffd6e7;--pink-d:#c2185b;--mint:#d9f5ea;--sky:#dff0ff;--ink:#2b2b3a;--gold:#b8892b}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Rubik","Open Sans",Arial,sans-serif;color:var(--ink);
+background:linear-gradient(160deg,var(--pink) 0%,#fff 45%,var(--mint) 75%,var(--sky) 100%);min-height:100vh;
+display:flex;flex-direction:column;align-items:center}
+main{width:100%;max-width:640px;padding:28px 16px 90px}
+.card{background:#fff;border-radius:22px;padding:26px 22px;box-shadow:0 8px 30px rgba(194,24,91,.12);margin-top:18px}
+h1{color:var(--gold);text-align:center;font-size:1.7rem;margin:6px 0 4px}
+.sub{text-align:center;margin:0 0 6px;color:#555}
+.pledge{background:var(--pink);border-radius:16px;padding:16px 18px;line-height:1.85;font-size:1.05rem}
+label{display:block;font-weight:600;margin:16px 0 6px}
+input[type=text],input[type=tel]{width:100%;padding:13px 14px;border:2px solid var(--sky);border-radius:12px;font:inherit}
+input:focus{outline:none;border-color:var(--pink-d)}
+.check{display:flex;gap:10px;align-items:flex-start;margin-top:18px;line-height:1.6}
+.check input{width:22px;height:22px;margin-top:4px;accent-color:var(--pink-d)}
+.center{text-align:center}
+button,.dl{display:block;width:100%;max-width:420px;margin:18px auto 0;padding:15px 18px;border:0;border-radius:14px;
+background:var(--pink-d);color:#fff;font:600 1.05rem inherit;text-align:center;text-decoration:none;cursor:pointer}
+button:disabled{opacity:.45;cursor:not-allowed}
+.dl{background:var(--mint);color:var(--ink);border:2px solid #9bdcc3}
+.dl small{display:block;font-weight:400;color:#555;margin-top:2px}
+.err{color:#b00020;text-align:center;margin-top:10px;min-height:1.2em}
+.hidden{display:none}
+footer{position:fixed;bottom:0;inset-inline:0;background:#fff;border-top:1px solid #eee;text-align:center;padding:10px 8px;font-size:.9rem;color:#555}
+</style>
+</head>
+<body>
+<main>
+
+<section id="sign" class="card">
+  <h1>חוברות להדפסה</h1>
+  <p class="sub">לפני ההורדה, חתימה קצרה על התחייבות לשמירה על הקבצים</p>
+  <div class="pledge">
+    החוברות נוצרו בעבודה רבה, והן מיועדות לשימושך האישי בלבד.<br>
+    בחתימתי אני מתחייבת שלא לשתף, להפיץ, לפרסם, להעביר או לשלוח את הקבצים, בכל צורה שהיא, לאף אדם.<br>
+    אני מבינה שהפצה של הקבצים היא הפרת זכויות יוצרים ועלולה להוות עבירה פלילית.
+  </div>
+  <form id="f" autocomplete="off">
+    <label for="name">שם מלא</label>
+    <input id="name" type="text" required>
+    <label for="idn">מספר תעודת זהות</label>
+    <input id="idn" type="tel" inputmode="numeric" maxlength="9" required>
+    <div class="check">
+      <input id="ok" type="checkbox">
+      <label for="ok" style="margin:0;font-weight:400">קראתי, הבנתי ואני מתחייבת לשמור על הקבצים לעצמי בלבד.</label>
+    </div>
+    <div class="err" id="err"></div>
+    <button id="go" type="submit" disabled>אני חותמת ועוברת להורדה</button>
+  </form>
+</section>
+
+<section id="files" class="card hidden">
+  <h1>תודה, החתימה התקבלה</h1>
+  <p class="sub">אפשר להוריד את שלוש החוברות להדפסה</p>
+  <a class="dl" href="https://bb8527bf-769e-45a0-8b73-bd207b68dc55.usrfiles.com/ugd/57b054_577568f1b0c143d0a4162608806c4e5a.pdf" target="_blank" rel="noopener">חוברת מספרים בקלות<small>להורדת קובץ PDF</small></a>
+  <a class="dl" href="https://bb8527bf-769e-45a0-8b73-bd207b68dc55.usrfiles.com/ugd/57b054_b95e6e346a6841e9a985ddf3b893d233.pdf" target="_blank" rel="noopener">חוברת מודעות פונולוגית ושפה<small>להורדת קובץ PDF</small></a>
+  <a class="dl" href="https://bb8527bf-769e-45a0-8b73-bd207b68dc55.usrfiles.com/ugd/57b054_3d8d44ee95d64872920d4d98b5bd3adb.pdf" target="_blank" rel="noopener">חוברת אותיות בקלות<small>להורדת קובץ PDF</small></a>
+</section>
+
+</main>
+<footer>כל הזכויות שמורות לחן קלימיאן</footer>
+
+<script>
+// החתימות נשמרות בגיליון הגוגל 'חתימות על התחייבות - חוברות להדפסה'.
+var SIGN_ENDPOINT = "https://script.google.com/macros/s/AKfycbzO_P8kS3HWljepDQOhL6kWJaPQ3oQ25A2ZrsvWbVlVDW57yfP6O5al9LayKXpMh1OJ7w/exec";
+var f=document.getElementById('f'),n=document.getElementById('name'),i=document.getElementById('idn'),
+    ok=document.getElementById('ok'),go=document.getElementById('go'),err=document.getElementById('err');
+function valid(){return n.value.trim().split(/\s+/).length>=2 && /^\d{8,9}$/.test(i.value.trim()) && ok.checked}
+function upd(){go.disabled=!valid()}
+[n,i,ok].forEach(function(e){e.addEventListener('input',upd);e.addEventListener('change',upd)});
+function show(){document.getElementById('sign').classList.add('hidden');document.getElementById('files').classList.remove('hidden');window.scrollTo(0,0)}
+try{ if(localStorage.getItem('hk-signed')==='1') show(); }catch(e){}
+f.addEventListener('submit',function(ev){
+  ev.preventDefault(); if(!valid()){err.textContent='נא למלא שם מלא, תעודת זהות והסכמה';return}
+  var body={name:n.value.trim(),id:i.value.trim(),signedAt:new Date().toISOString(),pledge:'v1'};
+  go.disabled=true;
+  var done=function(){try{localStorage.setItem('hk-signed','1')}catch(e){} show()};
+  if(!SIGN_ENDPOINT){done();return}
+  fetch(SIGN_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'content-type':'text/plain;charset=utf-8'},body:JSON.stringify(body)})
+    .then(done)
+    .catch(function(){err.textContent='משהו השתבש בשליחת החתימה, נסי שוב בעוד רגע';go.disabled=false});
+});
+</script>
+</body>
+</html>
